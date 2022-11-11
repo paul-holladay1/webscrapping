@@ -15,10 +15,10 @@ tablecells = soup.findAll('tr')
 
 for row in tablecells[1:6]:
     td = row.findAll('td')
-    rank = int(td[1].text)
+    rank = td[1].text
     
 
-    for rec in tablecells:
+    for name in tablecells:
         p = row.findAll('p')
         name = p[1].text
 
@@ -26,14 +26,15 @@ for row in tablecells[1:6]:
     #     img = row.findAll('img')
     #     icon = img[0].
 
-    # for rec in tablecells:
-    #     span = row.findAll('span')
-    #     price = float(span[0].text.replace('$','').replace(',',''))
+    for price in tablecells:
+        span = row.findAll('span')
+        price = float(span[0].text.replace('$','').replace(',',''))
 
     
     
     print(rank)
     print(name)
+    print(price)
     # print(icon)
     # print(str(price))
     print()
